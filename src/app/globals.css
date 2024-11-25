@@ -1,21 +1,37 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --scissors : hsl(39, 89%, 49%) , hsl(40, 84%, 53%);
+  --paper : hsl(230, 89%, 62%) , hsl(230, 89%, 65%);
+  --rock : hsl(349, 71%, 52%) , hsl(349, 70%, 56%);
+  --lizard : hsl(261, 73%, 60%) , hsl(261, 72%, 63%);
+  --spock: hsl(189, 59%, 53%) , hsl(189, 58%, 57%);
+  --darktxt : hsl(229, 25%, 31%);
+  --scoretxt: hsl(229, 64%, 46%);
+  --header: hsl(217, 16%, 45%);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background:  ellipse at top,hsl(214, 47%, 23%), hsl(237, 49%, 15%);
     --foreground: #ededed;
+    --scissors : hsl(39, 89%, 49%) , hsl(40, 84%, 53%);
+    --paper : hsl(230, 89%, 62%) , hsl(230, 89%, 65%);
+    --rock : hsl(349, 71%, 52%) , hsl(349, 70%, 56%);
+    --lizard : hsl(261, 73%, 60%) , hsl(261, 72%, 63%);
+    --spock: hsl(189, 59%, 53%) , hsl(189, 58%, 57%);
+    --darktxt : hsl(229, 25%, 31%);
+    --scoretxt: hsl(229, 64%, 46%);
+    --header: hsl(217, 16%, 45%);
   }
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background: radial-gradient(var(--background));
+  font-family: "Barlow Semi Condensed",Arial, Helvetica, sans-serif;
 }
