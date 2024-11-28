@@ -11,7 +11,18 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        scissors : "var(--scissors)",
+        paper : "var(--paper)",
+        rock : "var(--rock)",
+        lizard : "var(--lizard)",
+        spock : "var(--spock)",
+        darktext : "var(--darktext)",
+        scoretxt : "var(--scoretxt)",
+        header : "var(--header)",
       },
+      backgroundImage: {
+        'triangle': "url('/bg-triangle.svg')",
+      }
     },
   },
   plugins: [],
