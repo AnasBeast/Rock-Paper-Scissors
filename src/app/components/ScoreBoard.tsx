@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function ScoreBoard (){
     return (
-        <div className="outline outline-6 outline-slate-400 outline-offset-2 p-4 rounded-3xl font-bold flex max-w-7xl mx-auto justify-between">
+        <div className="mt-12 outline outline-6 outline-slate-400 outline-offset-2 p-4 rounded-3xl font-bold flex max-w-7xl mx-auto justify-between">
             <Image
                 src="logo.svg"
                 height={100}

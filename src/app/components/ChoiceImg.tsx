@@ -1,4 +1,7 @@
+'use client'
+
 import Image from "next/image"
+import { useRouter } from "next/navigation"
 
 const images = [{
     src: "/icon-paper.svg",
@@ -16,7 +19,24 @@ const images = [{
   }
 ]
 
+interface navigationProps {
+  img: {  
+    src: string,
+    alt: string,
+    color: string
+  }
+}
+
 export const ChoiceImg = () => {
+  const router = useRouter();
+
+  const handleNavigate = ({img}:navigationProps) => {
+    console.log(img)
+    const queryString = new URLSearchParams(img).toString()
+    router.push(`/choice?${queryString}`)
+  }
+
+  
   return (
     <div className="grid grid-cols-2 gap-8 max-w-4xl justify-center mx-auto bg-triangle bg-no-repeat bg-[length:450px_500px] bg-center">
       {images.map((img) => (
@@ -32,6 +52,7 @@ export const ChoiceImg = () => {
             height={300}
             className="bg-white object-cover p-14 "
             priority
+            onClick={()=>handleNavigate({img})}
           />
         </div>
       ))}

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import ScoreBoard from "./components/ScoreBoard";
 
 export const metadata: Metadata = {
   title: "Rock Paper Scissors",
@@ -17,8 +18,9 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/logo.svg" />
       </head>
       <body
-        className={`antialiased`}
+        className={`antialiased overflow-hidden space-y-12`}
       >
+        <ScoreBoard/>
         {children}
       </body>
     </html>
