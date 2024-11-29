@@ -14,6 +14,8 @@
   --darktxt : hsl(229, 25%, 31%);
   --scoretxt: hsl(229, 64%, 46%);
   --header: hsl(217, 16%, 45%);
+  --modal: hsl(214, 47%, 23%);
+
 }
 
 @media (prefers-color-scheme: dark) {
@@ -28,6 +30,7 @@
     --darktxt : hsl(229, 25%, 31%);
     --scoretxt: hsl(229, 64%, 46%);
     --header: hsl(217, 16%, 45%);
+    --modal: hsl(214, 47%, 23%);
   }
 }
 

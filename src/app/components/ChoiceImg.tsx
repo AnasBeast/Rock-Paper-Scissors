@@ -22,7 +22,7 @@ export const ChoiceImg = () => {
       {images.map((img) => (
         <div
           key={Math.random()}
-          className={`relative rounded-full w-[300px] h-[300px] cursor-pointer overflow-hidden border-[32px] shadow-inner ${img.color=="rock"?'col-span-2':'col-span-1'} mx-auto`}
+          className={`relative rounded-full w-[300px] h-[300px] opacity-90 hover:opacity-100 transition-all duration-300 ease-out cursor-pointer overflow-hidden border-[32px] shadow-inner ${img.color=="rock"?'col-span-2':'col-span-1'} mx-auto`}
           style={{"borderColor":`var(--${img.color})`}}
         >
           <Image
@@ -30,7 +30,7 @@ export const ChoiceImg = () => {
             alt={img.alt}
             width={300}
             height={300}
-            className="bg-white object-cover p-14"
+            className="bg-white object-cover p-14 "
             priority
           />
         </div>

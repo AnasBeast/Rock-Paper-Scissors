@@ -16,7 +16,7 @@ export default {
         rock : "var(--rock)",
         lizard : "var(--lizard)",
         spock : "var(--spock)",
-        darktext : "var(--darktext)",
+        darktxt : "var(--darktxt)",
         scoretxt : "var(--scoretxt)",
         header : "var(--header)",
       },
