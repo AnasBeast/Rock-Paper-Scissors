@@ -1,15 +1,19 @@
-import { use } from 'react'
 import Choice from './Choice'
 
-export default function ChoicePage({ searchParams }: { searchParams: { [key: string]: string } }) {
-  const params = use(Promise.resolve(searchParams))
-  
+interface SearchParams {
+  [key: string]: string | string[] | undefined
+}
+
+interface PageProps {
+  searchParams: SearchParams
+}
+
+export default function ChoicePage({ searchParams }: PageProps) {
   const initialChoice = {
-    src: params.src || "/icon-paper.svg",
-    alt: params.alt || "Paper-Image",
-    color: params.color || "paper"
+    src: (searchParams.src as string) || "/icon-paper.svg",
+    alt: (searchParams.alt as string) || "Paper-Image",
+    color: (searchParams.color as string) || "paper"
   }
 
   return <Choice initialChoice={initialChoice} />
 }
-

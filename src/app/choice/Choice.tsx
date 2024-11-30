@@ -1,4 +1,5 @@
 "use client"
+
 import * as React from 'react'
 import Image from 'next/image';
 import { useEffect, useState, useCallback } from 'react';
@@ -37,9 +38,10 @@ const defaultChoice: Choice = {
   color: "paper"
 }
 
-export default function Choice({ initialChoice = defaultChoice }: { initialChoice?: Choice }) {
+export default function Choice({ initialChoice = defaultChoice }: { initialChoice: Choice }) {
     const [choix, setChoix] = useState<Choice>(initialChoice)
     const [houseChoice, setHouseChoice] = useState<Choice>(defaultChoice)
+    const [mounted, setMounted] = useState(false)
 
     const getRandomIntInclusive = useCallback((min: number, max: number) => {
         const minCeiled = Math.ceil(min);
@@ -63,6 +65,7 @@ export default function Choice({ initialChoice = defaultChoice }: { initialChoic
     useEffect(() => {
         setChoix(initialChoice)
         shuffleImage();
+        setMounted(true)
     }, [initialChoice, shuffleImage])
 
     const ChoiceBanner = ({ choice }: ChoiceProps) => {
@@ -87,6 +90,10 @@ export default function Choice({ initialChoice = defaultChoice }: { initialChoic
         </div>
       );
     };
+
+    if (!mounted) {
+        return null; // or a loading placeholder
+    }
 
   return (
     <div className='h-screen'>
