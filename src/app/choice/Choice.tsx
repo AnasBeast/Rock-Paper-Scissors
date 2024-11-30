@@ -39,8 +39,8 @@ const defaultChoice: Choice = {
 }
 
 export default function Choice({ initialChoice = defaultChoice }: { initialChoice: Choice }) {
-    const [choix, setChoix] = useState<Choice>(initialChoice)
-    const [houseChoice, setHouseChoice] = useState<Choice>(defaultChoice)
+    const [choix, setChoix] = useState(initialChoice)
+    const [houseChoice, setHouseChoice] = useState(defaultChoice)
     const [mounted, setMounted] = useState(false)
 
     const getRandomIntInclusive = useCallback((min: number, max: number) => {
