@@ -3,7 +3,17 @@ import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 
 export default function ScoreBoard (){
-    const [score, setScore] = useState(localStorage.getItem("score") || '');
+    const [score, setScore] = useState(()=>{
+        if (typeof window !== 'undefined'){
+            const from_localStorage = window.localStorage.getItem('score')
+            if (from_localStorage === null || from_localStorage === undefined){
+            return '12'
+            }
+    
+            return `${from_localStorage}` ? from_localStorage : '12'
+        }
+        return ''
+    });
 
     useEffect(() => {
         const storedScore = localStorage.getItem("score");
