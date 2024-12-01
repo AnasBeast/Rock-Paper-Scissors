@@ -69,33 +69,32 @@ export default function Choice({ initialChoice = defaultChoice }: { initialChoic
                 setTimeout(shuffle, 200);
             }
             if(i==15 && isShuffled){
-                isShuffled = false;
-                if(choix.color === choice.color) {
-                    setWinner("draw");
-                  } else if (
-                      (choix.color === "rock" && choice.color === "scissors") ||
-                      (choix.color === "scissors" && choice.color === "paper") ||
-                      (choix.color === "paper" && choice.color === "rock")
-                      ) {
-                      setWinner("YOU WIN");
-                      let x= (parseInt( localStorage.getItem("score") || "0") +1).toString();
-                      localStorage.setItem("score",x);
-                      window.dispatchEvent(new StorageEvent('storage', { key: 'score', newValue: x }));
-                      console.log("win")
-                      console.log(i)
-                  }
-                  else {
-                      setWinner("YOU LOSE");
-                      let x= (parseInt( localStorage.getItem("score") || "0") -1).toString();
-                      localStorage.setItem("score",x);
-                      window.dispatchEvent(new StorageEvent('storage', { key: 'score', newValue: x }));
-                      console.log("lose")
-                      console.log(i)
-                    
-                    }
-                setShow(true);
-                
-                
+              isShuffled = false;
+              if (choix.color === choice.color) {
+                setWinner("draw");
+              } else if (
+                (choix.color === "rock" && choice.color === "scissors") ||
+                (choix.color === "scissors" && choice.color === "paper") ||
+                (choix.color === "paper" && choice.color === "rock")
+              ) {
+                setWinner("YOU WIN");
+                let x = (parseInt(localStorage.getItem("score") || "0") + 1).toString();
+                localStorage.setItem("score", x);
+                window.dispatchEvent(new StorageEvent('storage', { key: 'score', newValue: x }));
+                console.log("win")
+                console.log(i)
+              }
+              else {
+                setWinner("YOU LOSE");
+                let x = (parseInt(localStorage.getItem("score") || "0") - 1).toString();
+                localStorage.setItem("score", x);
+                window.dispatchEvent(new StorageEvent('storage', { key: 'score', newValue: x }));
+                console.log("lose")
+                console.log(i)
+
+              }
+              setShow(true);
+
             }
         }
         

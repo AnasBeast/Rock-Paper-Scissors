@@ -24,9 +24,9 @@ export default {
         'triangle': "url('/bg-triangle.svg')",
       },
       animation: {
-        'ripple-slow': 'ripple 6s linear infinite',
-        'ripple-medium': 'ripple 6s linear infinite 2s',
-        'ripple-fast': 'ripple 6s linear infinite 2s',
+        'ripple-slow': 'ripple 3s linear infinite',
+        'ripple-medium': 'ripple 3s linear infinite 2s',
+        'ripple-fast': 'ripple 3s linear infinite 2s',
       },
       keyframes: {
         ripple: {
