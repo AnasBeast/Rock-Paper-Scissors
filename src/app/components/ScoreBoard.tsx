@@ -1,7 +1,27 @@
+"use client"
 import Image from 'next/image';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 export default function ScoreBoard (){
+    const [score, setScore] = useState(localStorage.getItem("score") || '');
+
+    useEffect(() => {
+        const storedScore = localStorage.getItem("score");
+        if (storedScore) {
+            setScore(storedScore);
+        }
+
+        const handleStorageChange = (event:any) => {
+            if (event.key === 'score') {
+                setScore(event.newValue);
+            }
+          };
+      
+          window.addEventListener('storage', handleStorageChange);
+
+    }, []);
+
+
     return (
         <div className="mt-12 outline outline-6 outline-slate-400 outline-offset-2 p-4 rounded-3xl font-bold flex max-w-7xl mx-auto justify-between">
             <Image
@@ -12,7 +32,7 @@ export default function ScoreBoard (){
             />
             <div className="bg-white rounded-lg py-4 px-10 text-center flex flex-col justify-center">
                 <h2 className="text-scoretxt text-2xl">SCORE</h2>
-                <h1 className="text-header text-8xl">12</h1>
+                <h1 className="text-header text-8xl">{score}</h1>
             </div>
         </div>
     );

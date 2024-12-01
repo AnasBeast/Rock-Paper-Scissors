@@ -15,6 +15,8 @@
   --scoretxt: hsl(229, 64%, 46%);
   --header: hsl(217, 16%, 45%);
   --modal: hsl(214, 47%, 23%);
+  --transparent: rgba(0, 0, 0, 0.2);
+
 
 }
 
@@ -31,6 +33,7 @@
     --scoretxt: hsl(229, 64%, 46%);
     --header: hsl(217, 16%, 45%);
     --modal: hsl(214, 47%, 23%);
+    --transparent: rgba(0, 0, 0, 0.2);
   }
 }
 

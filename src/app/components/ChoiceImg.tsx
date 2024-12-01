@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import { useRouter } from "next/navigation"
+import { useEffect } from "react"
 
 const images = [{
     src: "/icon-paper.svg",
@@ -29,6 +30,10 @@ interface navigationProps {
 
 export const ChoiceImg = () => {
   const router = useRouter();
+  useEffect(() => {
+    localStorage.getItem("score") || localStorage.setItem("score", "12");
+  }
+  , [])
 
   const handleNavigate = ({img}:navigationProps) => {
     console.log(img)

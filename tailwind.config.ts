@@ -22,6 +22,18 @@ export default {
       },
       backgroundImage: {
         'triangle': "url('/bg-triangle.svg')",
+      },
+      animation: {
+        'ripple-slow': 'ripple 6s linear infinite',
+        'ripple-medium': 'ripple 6s linear infinite 2s',
+        'ripple-fast': 'ripple 6s linear infinite 2s',
+      },
+      keyframes: {
+        ripple: {
+          '0%': { transform: 'translate(-50%, -50%) scale(0)', opacity: '0' },
+          '50%': { opacity: '1' },
+          '100%': { transform: 'translate(-50%, -50%) scale(1)', opacity: '0' },
+        },
       }
     },
   },
