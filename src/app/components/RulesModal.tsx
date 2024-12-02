@@ -56,7 +56,7 @@ export default function RulesModal() {
             className="relative transform overflow-hidden sm:h-auto sm:w-auto h-screen w-screen md:rounded-2xl bg-white text-left shadow-xl transition-all data-[closed]:translate-y-4 data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-200 data-[enter]:ease-out data-[leave]:ease-in sm:my-8 data-[closed]:sm:translate-y-0 data-[closed]:sm:scale-95"
           >
             <div className="bg-white pb-4 pt-5 sm:p-6 sm:pb-4">
-              <div className="sm:flex sm:items-start sm:py-0 py-10">
+              <div className="sm:flex sm:items-start sm:p pb-10 pt-5">
                 
                 <div className="mt-3 text-center sm:px-0 px-8 flex items-center sm:justify-between justify-center w-full sm:ml-4 sm:mt-0 sm:text-left">
                   <DialogTitle as="h3" className="text-5xl font-semibold uppercase text-darktxt">
@@ -68,7 +68,7 @@ export default function RulesModal() {
               </div>
             </div>
             
-            <div className='flex items-center justify-center sm:gap-8 gap-2 sm:px-8 px-2 py-8'>
+            <div className='flex items-center justify-center sm:gap-8 gap-2 sm:px-8 px-2 sm:py-8 py-6'>
               <Choice src="/icon-paper.svg"/>
               <div className='flex flex-col items-center'>
                 <h2 className='uppercase font-bold sm:text-3xl text-xl text-gray-300'>Beats</h2>
@@ -88,7 +88,7 @@ export default function RulesModal() {
               </div>
             </div>
 
-            <div className='mx-auto px-8 py-8 gap-40'>
+            <div className='mx-auto px-8 sm:py-8 py6 gap-40'>
              <Choice src="/icon-rock.svg"/>
             </div>
           </DialogPanel>

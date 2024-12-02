@@ -12,9 +12,9 @@ export default function Winner({
 
   return (
   <div className="flex z-10 transition-opacity ease-in duration-700 flex-col items-center 
-    text-center justify-center sm:gap-12 gap-8">
-    <h1 className="uppercase sm:text-6xl text-2xl text-white font-bold">{winner}</h1>
-    <button className="bg-white text-modal sm:opacity-90 hover:opacity-100 sm:py-8 sm:px-20 py-4 px-12 
+    text-center justify-center sm:gap-12 gap-4">
+    <h1 className="uppercase sm:text-6xl text-3xl text-white font-bold">{winner}</h1>
+    <button className="bg-white text-modal sm:opacity-90 hover:opacity-100 sm:py-8 sm:px-20 py-6 px-14 
     sm:text-2xl text-xl uppercase font-semibold rounded-xl"
     onClick={navigateToHome}
     >
