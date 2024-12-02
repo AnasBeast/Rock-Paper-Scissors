@@ -43,11 +43,13 @@ export const ChoiceImg = () => {
 
   
   return (
-    <div className="grid grid-cols-2 gap-8 max-w-4xl justify-center mx-auto bg-triangle bg-no-repeat bg-[length:450px_500px] bg-center">
+    <div className="grid grid-cols-2 gap-8 max-w-4xl justify-center mx-auto bg-triangle bg-no-repeat sm:bg-[length:450px_500px] bg-[length:150px_200px] bg-center sm:pt-0 pt-8">
       {images.map((img) => (
         <div
           key={Math.random()}
-          className={`relative rounded-full w-[300px] h-[300px] opacity-90 hover:opacity-100 transition-all duration-300 ease-out cursor-pointer overflow-hidden border-[32px] shadow-inner ${img.color=="rock"?'col-span-2':'col-span-1'} mx-auto`}
+          className={`relative rounded-full sm:w-[300px] sm:h-[300px] w-[140px] h-[140px] opacity-90 flex justify-center items-center
+            hover:opacity-100 transition-all duration-300 ease-out cursor-pointer overflow-hidden sm:border-[32px] border-[10px]
+            shadow-inner ${img.color=="rock"?'col-span-2':'col-span-1'} mx-auto`}
           style={{"borderColor":`var(--${img.color})`}}
         >
           <Image
@@ -55,7 +57,7 @@ export const ChoiceImg = () => {
             alt={img.alt}
             width={300}
             height={300}
-            className="bg-white object-cover p-14 "
+            className="bg-white object-cover sm:p-14 p-7 max-w-fit filter sm:w-[300px] sm:h-[300px] w-[140px] h-[140px]"
             priority
             onClick={()=>handleNavigate({img})}
           />
