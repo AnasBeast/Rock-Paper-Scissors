@@ -19,6 +19,7 @@ export default {
         darktxt : "var(--darktxt)",
         scoretxt : "var(--scoretxt)",
         header : "var(--header)",
+        modal : "var(--modal)"
       },
       backgroundImage: {
         'triangle': "url('/bg-triangle.svg')",

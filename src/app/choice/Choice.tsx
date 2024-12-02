@@ -111,10 +111,11 @@ export default function Choice({ initialChoice = defaultChoice }: { initialChoic
       if (!choice) return null;
 
       return (
-        <div className="flex z-10 items-center space-x-2">
+        <div className="flex z-10 items-center">
           <div
-            className={`relative rounded-full w-[300px] h-[300px] opacity-100 transition-all duration-300 ease-out
-                overflow-hidden ${choice.color=="transparent"?"border-none":"border-[32px]"} shadow-inner ${choice.color === "rock" ? 'col-span-2' : 'col-span-1'} mx-auto bg-blue-950/20`}
+            className={`relative rounded-full sm:w-[300px] sm:h-[300px] w-[140px] h-[140px] opacity-100 flex justify-center items-center
+              hover:opacity-100 transition-all duration-300 ease-out cursor-pointer overflow-hidden sm:border-[32px] border-[10px]
+              shadow-inner ${choice.color=="rock"?'col-span-2':'col-span-1'} mx-auto bg-blue-950/20`}
             style={{ borderColor: `var(--${choice.color})` }}
           >
             {choice.src && 
@@ -123,7 +124,7 @@ export default function Choice({ initialChoice = defaultChoice }: { initialChoic
                 alt={choice.alt}
                 width={300}
                 height={300}
-                className="bg-white object-cover p-14"
+                className="bg-white object-cover sm:p-14 p-7 max-w-fit filter sm:w-[300px] sm:h-[300px] w-[140px] h-[140px]"
                 priority
             />
             }
@@ -140,9 +141,9 @@ export default function Choice({ initialChoice = defaultChoice }: { initialChoic
     <div className="h-screen min-h-screen">
       
       
-      <div className={`grid ${show?"grid-cols-3":"grid-cols-2"} max-w-7xl mx-auto`}>
-        <div className="flex flex-col justify-center gap-8 text-center">
-          <h1 className="text-4xl font-semibold text-white uppercase">
+      <div className={`sm:grid sm:${show?"grid-cols-3":"grid-cols-2"} max-w-7xl flex justify-between sm:p-0 px-4 mx-auto`}>
+        <div className="flex flex-1 sm:flex-col flex-col-reverse justify-center gap-8 text-center">
+          <h1 className="sm:text-4xl text-lg tracking-wide font-semibold text-white uppercase">
             You Picked
           </h1>
           <div className="relative">
@@ -167,10 +168,10 @@ export default function Choice({ initialChoice = defaultChoice }: { initialChoic
             </div>
         </div>
 
-        {show && <Winner winner={winner} />}
+        {show && <div className='sm:block hidden'><Winner winner={winner} /></div>}
         
-        <div className="flex flex-col justify-center gap-8 text-center">
-          <h1 className="text-4xl font-semibold text-white uppercase">
+        <div className="flex flex-1 sm:flex-col flex-col-reverse justify-center gap-8 text-center">
+          <h1 className="sm:text-4xl text-lg tracking-wide font-semibold text-white uppercase">
             The house Picked
           </h1>
           <div className="relative">
@@ -194,6 +195,7 @@ export default function Choice({ initialChoice = defaultChoice }: { initialChoic
           </div>
         </div>
       </div>
+      {show && <div className='sm:hidden mt-16'><Winner winner={winner} /></div>}
     </div>
   );
 }

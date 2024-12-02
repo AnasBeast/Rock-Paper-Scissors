@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import ScoreBoard from "./components/ScoreBoard";
+import RulesModal from "./components/RulesModal";
 
 export const metadata: Metadata = {
   title: "Rock Paper Scissors",
@@ -22,6 +23,7 @@ export default function RootLayout({
       >
         <ScoreBoard/>
         {children}
+        <RulesModal />
         <span className="absolute bottom-0 right-1/2 transform translate-x-1/2 text-white">Created by <a href="https://github.com/AnasBeast" target="_blank" className="font-semibold">AnasBeast</a></span>
       </body>
     </html>

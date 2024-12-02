@@ -6,7 +6,6 @@ export default function Page() {
   return (
     <div className="sm:px-20">
       <ChoiceImg />
-      <RulesModal />
     </div>
   );
 }
