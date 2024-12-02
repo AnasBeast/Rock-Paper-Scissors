@@ -141,7 +141,7 @@ export default function Choice({ initialChoice = defaultChoice }: { initialChoic
     <div className="h-screen min-h-screen">
       
       
-      <div className={`sm:grid sm:${show?"grid-cols-3":"grid-cols-2"} max-w-7xl flex justify-between sm:p-0 px-4 mx-auto`}>
+      <div className={`sm:grid ${show?"grid-cols-3":"grid-cols-2"} max-w-7xl flex justify-between sm:items-center items-baseline sm:p-0 px-4 mx-auto`}>
         <div className="flex flex-1 sm:flex-col flex-col-reverse justify-center gap-8 text-center">
           <h1 className="sm:text-4xl text-lg tracking-wide font-semibold text-white uppercase">
             You Picked

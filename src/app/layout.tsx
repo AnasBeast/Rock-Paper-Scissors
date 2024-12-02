@@ -13,6 +13,8 @@ export const viewport: Viewport = {
   initialScale: 1,
   width: 'device-width',
   maximumScale: 1,
+  userScalable: false,
+  viewportFit : 'contain'
 }
 export default function RootLayout({
   children,
