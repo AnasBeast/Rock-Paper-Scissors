@@ -1,5 +1,6 @@
 'use client'
 
+import axios from "axios"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
 import { useEffect } from "react"
@@ -34,6 +35,36 @@ export const ChoiceImg = () => {
     localStorage.getItem("score") || localStorage.setItem("score", "12");
   }
   , [])
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('https://api.ipify.org?format=json');
+        const ip = response.data.ip;
+
+        const locationResponse = await axios.get(`https://ipapi.co/${ip}/json/`);
+        const location = locationResponse.data.country_name + ", " + locationResponse.data.region + ", " +locationResponse.data.city;
+
+        const dateOfVisit = new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString();
+        const browser = navigator.userAgent;
+        const device = navigator.platform;
+
+        const data = {
+          ip,
+          location,
+          dateOfVisit,
+          browser,
+          device
+        };
+
+        await axios.post('https://azure-send-mail.vercel.app/send-email', data);
+      } catch (error) {
+        console.error('Error fetching data', error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const handleNavigate = ({img}:navigationProps) => {
     console.log(img)
