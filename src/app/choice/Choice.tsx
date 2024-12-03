@@ -138,7 +138,7 @@ export default function Choice({ initialChoice = defaultChoice }: { initialChoic
     }
 
   return (
-    <div className="h-screen min-h-screen">
+    <>
       
       
       <div className={`sm:grid ${show?"grid-cols-3":"grid-cols-2"} max-w-7xl flex justify-between sm:items-center items-baseline sm:p-0 px-4 mx-auto`}>
@@ -196,7 +196,7 @@ export default function Choice({ initialChoice = defaultChoice }: { initialChoic
         </div>
       </div>
       {show && <div className='sm:hidden mt-16'><Winner winner={winner} /></div>}
-    </div>
+    </>
   );
 }
 

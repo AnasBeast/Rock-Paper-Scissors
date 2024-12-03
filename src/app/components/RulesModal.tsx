@@ -35,14 +35,15 @@ export default function RulesModal() {
 
   return (
     <>
-        <button
-        className="text-white text-4xl font-semibold uppercase outline outline-foreground outline-4 
-        hover:bg-foreground hover:text-header transition ease-in-out focus:ring-4 px-10 py-3 rounded-md absolute 
-        sm:right-12 sm:bottom-12 bottom-12 right-1/4 tracking-wide"
-        onClick={() => setOpen(true)}
-        >
-          Rules
-        </button>
+        <div className='w-full flex sm:justify-end justify-center absolute sm:bottom-12 bottom-10 sm:right-12'>
+          <button
+          className="text-white text-4xl font-semibold uppercase outline outline-foreground outline-4 
+          hover:bg-foreground hover:text-header transition ease-in-out focus:ring-4 px-10 py-3 rounded-md tracking-wide"
+          onClick={() => setOpen(true)}
+          >
+            Rules
+          </button>
+        </div>
       <Dialog open={open} onClose={setOpen} className="relative z-10">
       <DialogBackdrop
         transition
