@@ -38,7 +38,7 @@ export default function RulesModal() {
         <div className='w-full flex sm:justify-end justify-center absolute sm:bottom-12 bottom-10 sm:right-12'>
           <button
           className="text-white text-4xl font-semibold uppercase outline outline-foreground outline-4 
-          hover:bg-foreground hover:text-header transition ease-in-out focus:ring-4 px-10 py-3 rounded-md tracking-wide"
+          hover:bg-foreground hover:text-modal transition ease-in-out focus:ring-4 px-10 py-3 rounded-md tracking-wide"
           onClick={() => setOpen(true)}
           >
             Rules
